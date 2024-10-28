@@ -22,7 +22,7 @@ export function TabsAnimated() {
       let width = refOne?.current?.offsetWidth;
 
       if (
-        pathname === "/tabspage/tab-2" &&
+        pathname === "/tabs/tab-2" &&
         refOne.current?.getBoundingClientRect().left &&
         refTwo?.current?.getBoundingClientRect().left
       ) {
@@ -32,7 +32,7 @@ export function TabsAnimated() {
         width = refTwo?.current?.offsetWidth;
         setSelectedTab("Перемещение оборудования");
       } else if (
-        pathname === "/tabspage/tab-3" &&
+        pathname === "/tabs/tab-3" &&
         refOne?.current?.getBoundingClientRect().left &&
         refThree?.current?.getBoundingClientRect().left
       ) {
@@ -52,7 +52,7 @@ export function TabsAnimated() {
   );
 
   const onClickOne = contextSafe(() => {
-    router.push("/tabspage/tab-1");
+    router.push("/tabs");
     gsap.to(".box", { x: 0, width: refOne?.current?.offsetWidth });
     setSelectedTab("По заявкам");
   });
@@ -64,7 +64,7 @@ export function TabsAnimated() {
   // }
 
   const onClickTwo = contextSafe(() => {
-    router.push("/tabspage/tab-2");
+    router.push("/tabs/tab-2");
     if (
       refOne.current?.getBoundingClientRect().left &&
       refTwo?.current?.getBoundingClientRect().left
@@ -80,7 +80,7 @@ export function TabsAnimated() {
   });
 
   const onClickThree = contextSafe(() => {
-    router.push("/tabspage/tab-3");
+    router.push("/tabs/tab-3");
     if (
       refOne?.current?.getBoundingClientRect().left &&
       refThree?.current?.getBoundingClientRect().left
